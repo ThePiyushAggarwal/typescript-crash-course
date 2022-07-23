@@ -40,3 +40,42 @@ const userr = {
     id: 3,
     name: 'd',
 };
+// Type Assertion
+// we want to treat an entity as a different type
+let cid = 1;
+// let costumerId = <number>cid
+let costumerId = cid;
+// Functions
+function addNum(x, y) {
+    return x + y;
+}
+console.log(addNum(1, 3));
+// Void
+function log(message) {
+    console.log(message);
+}
+log('Helio');
+const user1 = {
+    id: 1,
+    name: 'John',
+};
+const p1 = 1;
+const add = (x, y) => x + 1;
+const sub = (x, y) => x - 1;
+// Classes
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    // We can create any methods as well
+    // accessble using e.g. brad.register()
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+// public, private, protected(getting access from extended class) keywords
+// for class properties
+const brad = new Person(1, 'fd');
+const mike = new Person(2, 'fdass');
+console.log(brad, mike);

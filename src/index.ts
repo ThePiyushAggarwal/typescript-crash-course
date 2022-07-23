@@ -55,3 +55,68 @@ const userr: User = {
 
 // Type Assertion
 // we want to treat an entity as a different type
+let cid: any = 1
+// let costumerId = <number>cid
+let costumerId = cid as number
+
+// Functions
+function addNum(x: number, y: number): number {
+  return x + y
+}
+console.log(addNum(1, 3))
+// Void
+function log(message: string | number): void {
+  console.log(message)
+}
+log('Helio')
+
+// Interfaces
+interface UserInterface {
+  readonly id: number
+  name: string
+  age?: number
+}
+const user1: UserInterface = {
+  id: 1,
+  name: 'John',
+}
+// Interfaces cannot create primitive types
+type Point = number | string
+const p1: Point = 1
+
+interface MathFunc {
+  (x: number, y: number): number
+}
+
+const add: MathFunc = (x: number, y: number): number => x + 1
+const sub: MathFunc = (x: number, y: number): number => x - 1
+
+// Interface for class down
+// accessible as // class Person implements PersonInterface {
+interface PersonInterface {
+  id: number
+  name: string
+  register(): string
+}
+
+// Classes
+class Person {
+  id: number
+  name: string
+
+  constructor(id: number, name: string) {
+    this.id = id
+    this.name = name
+  }
+
+  // We can create any methods as well
+  // accessble using e.g. brad.register()
+  register() {
+    return `${this.name} is now registered`
+  }
+}
+// public, private, protected(getting access from extended class) keywords
+// for class properties
+const brad = new Person(1, 'fd')
+const mike = new Person(2, 'fdass')
+console.log(brad, mike)
