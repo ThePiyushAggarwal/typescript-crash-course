@@ -119,4 +119,26 @@ class Person {
 // for class properties
 const brad = new Person(1, 'fd')
 const mike = new Person(2, 'fdass')
-console.log(brad, mike)
+
+class Employee extends Person {
+  position: string
+
+  constructor(id: number, name: string, position: string) {
+    super(id, name)
+    this.position = position
+  }
+}
+
+const emp = new Employee(3, 'Shawn', 'Developer')
+// console.log(emp.register())
+
+// Generics
+function getArray<T>(items: T[]): T[] {
+  return new Array().concat(items)
+}
+
+let numArray = getArray<number>([1, 2, 3, 4])
+let stringArray = getArray<string>(['brad', 'john', 'jill'])
+
+numArray.push(2)
+stringArray.push('2')

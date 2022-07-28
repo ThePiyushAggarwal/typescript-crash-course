@@ -78,4 +78,19 @@ class Person {
 // for class properties
 const brad = new Person(1, 'fd');
 const mike = new Person(2, 'fdass');
-console.log(brad, mike);
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, 'Shawn', 'Developer');
+// console.log(emp.register())
+// Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let stringArray = getArray(['brad', 'john', 'jill']);
+numArray.push(2);
+stringArray.push('2');
